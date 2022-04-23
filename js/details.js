@@ -1,4 +1,4 @@
-import { products } from "./jacketsArray.js";
+/*import { products } from "./jacketsArray.js"; */
 import { getProduct } from "./getProducts.js";
 import { changeCartCount } from "./counter.js";
 
@@ -8,57 +8,90 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const jacketId = params.get("id");
 
+const specificProductUrl = "https://joakimlees.no/rainydays-api/wp-json/wc/store/products/" + jacketId;
+
+async function getApiProduct(url) {
+  const response = await fetch(url);
+  const products = await response.json();
+  return products;
+}
+
+const jacket = await getApiProduct(specificProductUrl);
+
+console.log(jacket);
+
+console.log(jacket.name);
+console.log(jacket.prices.price);
+console.log(jacket.images[0].src);
+console.log(jacket.categories[0].name);
+//casual, hike, sport
+console.log(jacket.tags[0].name);
+//size
+console.log(jacket.attributes[0].terms[1].name);
+//descriton
+console.log(jacket.description);
+//color
+console.log(jacket.attributes[1].terms[0].name);
+
+for (let i = 0; i < jacket.tags.length; i++) {
+  if (!jacket.tags[i]) {
+    jacket.tags[i] = "";
+  }
+}
+
+/*
 const findId = products.filter((product) => {
   return product.id === jacketId;
 });
 
 const jacket = findId[0];
 
+*/
+
 detailsContainer.innerHTML = `
 
 <div class="product-wrapper-details">
   <div class="product-text">
     <div>
-      <h1>${jacket.brand}</h1>
-      <h2>${jacket.name}</h2>
-      <p>${jacket.type}<p>
-      <p>${jacket.model}</p>
-      <p class="price-tag"><b>Price:</b> $${jacket.price}</p>
+      <h1>${jacket.name}</h1>
+      <p>${jacket.categories[0].name}<p>
+      <p>${jacket.tags[0].name}, ${jacket.tags[1].name}, ${jacket.tags[2].name}</p>
+      <p class="price-tag"><b>Price:</b> $${jacket.prices.price}</p>
     </div>
     <div class="input-details-wrapper" >
       <div>
-        <input ${jacket.color[0]};" type="radio" id="${jacket.color[0]}" value="${jacket.color[0]}" name="color" checked="checked">
-        <label for=${jacket.color[0]}>${jacket.color[0]}<label>
+        <input ${jacket.attributes[1].terms[0].name};" type="radio" id="${jacket.attributes[1].terms[0].name}" value="${jacket.attributes[1].terms[0].name}" name="color" checked="checked">
+        <label for=${jacket.attributes[1].terms[0].name}>${jacket.attributes[1].terms[0].name}<label>
       </div>
       <div>
-        <input type="radio" id="${jacket.color[1]}" value="${jacket.color[1]}" name="color">
-        <label for=${jacket.color[1]}>${jacket.color[1]}<label>
+        <input type="radio" id="${jacket.attributes[1].terms[1].name}" value="${jacket.attributes[1].terms[1].name}" name="color">
+        <label for=${jacket.attributes[1].terms[1].name}>${jacket.attributes[1].terms[1].name}<label>
       </div>
       <div>
-        <input type="radio" id="${jacket.color[2]}" value="${jacket.color[2]}" name="color">
-        <label for=${jacket.color[2]}>${jacket.color[2]}<label>
+        <input type="radio" id="${jacket.attributes[1].terms[2].name}" value="${jacket.attributes[1].terms[2].name}" name="color">
+        <label for=${jacket.attributes[1].terms[2].name}>${jacket.attributes[1].terms[2].name}<label>
       </div>
       <div>
         <label for="size-select">Select size:</label>
         <select class="size-select" name="size-select" id="size-select">
-          <option value="${jacket.size[0]}" selected="selected">${jacket.size[0]}</option>
-          <option value="${jacket.size[1]}">${jacket.size[1]}</option>
-          <option value="${jacket.size[2]}">${jacket.size[2]}</option>
+          <option value="${jacket.attributes[0].terms[0].name}" selected="selected">${jacket.attributes[0].terms[0].name}</option>
+          <option value="${jacket.attributes[0].terms[1].name}">${jacket.attributes[0].terms[1].name}</option>
+          <option value="${jacket.attributes[0].terms[2].name}">${jacket.attributes[0].terms[2].name}</option>
         </select>
       </div>
     </div>
     <div class="details-button-wrapper">
-      <button class="add-cart-btn to-cart-cta" data-image="${jacket.image}" data-brand="${jacket.brand}" data-name="${jacket.name}" data-price="${jacket.price}" data-color="${jacket.color[0]}" data-size="${jacket.size[0]}">Add to shopping cart</button>
+      <button class="add-cart-btn to-cart-cta" data-image="${jacket.images[0].src}" data-brand="${jacket.name}" data-name="${jacket.name}" data-price="${jacket.prices.price}" data-color="${jacket.attributes[1].terms[0].name}" data-size="${jacket.attributes[0].terms[0].name}">Add to shopping cart</button>
       <a class="view-cart-cta" href="/html/newCheckout.html">View shopping cart</a>
     </div>
   </div>
   <div class="image-container-details">
-  <img class="image-details" src="${jacket.image}" />
+  <img class="image-details" src="${jacket.images[0].src}" />
 </div>
 </div>
 <section class="more-details-wrapper">
   <h3>${jacket.name}, more details:</h3>
-    <p>${jacket.details}</p>
+    <p>${jacket.description}</p>
     <a class="back-to-jackets-cta" href="/html/store.html">See more jackets</a>
 </section>`;
 
