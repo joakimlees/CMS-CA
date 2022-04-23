@@ -1,0 +1,22 @@
+/*About us*/
+
+.about-heading__img {
+  background-image: url(../images/about-image.jpg);
+}
+
+.about-heading__img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+  background-color: rgba(10, 54, 65, 80%);
+  padding: 5px;
+  width: 99%;
+}
+
+.about-logo__wrapper {
+  display: flex;
+}
+
+.about-heading__img img {
+  height: 75px;
+}

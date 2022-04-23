@@ -1,0 +1,184 @@
+/*Product page*/
+
+.store-heading,
+.store-heading__img-new-arrivals,
+.store-heading__img-outlet,
+.store-heading__img-men,
+.store-heading__img-women,
+.about-heading__img {
+  display: flex;
+  flex-direction: row;
+  min-height: 200px;
+  margin-top: 5px;
+}
+
+.store-heading__img-men {
+  background-image: url(../images/men-image.jpg);
+}
+
+.store-heading__img-women {
+  background-image: url(../images/women-image.jpg);
+}
+
+.store-heading__img-new-arrivals {
+  background-image: url(../images/new-arrivals.jpg);
+}
+
+.store-heading__img-outlet {
+  background-image: url(../images/outlet-image.jpg);
+}
+
+.store-heading__img-men {
+  background-image: url(../images/men-image.jpg);
+}
+
+.store-heading__img-women,
+.store-heading__img-men,
+.store-heading__img-new-arrivals,
+.store-heading__img-outlet,
+.about-heading__img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.store-heading__img-new-arrivals h1,
+.store-heading__img-outlet h1,
+.store-heading__img-men h1,
+.store-heading__img-women h1 {
+  font-size: 1.5rem;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: rgba(10, 54, 65, 80%);
+  align-self: start;
+  margin: 25px 0px;
+  text-transform: uppercase;
+}
+
+.store-heading__img-new-arrivals .store-marketing-text__wrapper .store-marketing-text__bold,
+.store-heading__img-outlet .store-marketing-text__wrapper .store-marketing-text__bold,
+.store-heading__img-men .store-marketing-text__wrapper .store-marketing-text__bold,
+.store-heading__img-women .store-marketing-text__wrapper .store-marketing-text__bold {
+  margin: 0px 3px;
+}
+
+/*Products main heading*/
+
+.store-products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-products h1 {
+  font-size: 2.5rem;
+  margin: 50px auto 50px;
+}
+
+.store-products h2 {
+  display: inline-block;
+  color: #34665b;
+}
+
+#filters-menu:checked ~ .product-filters {
+  display: block;
+}
+
+.filters-menu__label {
+  background-color: #0a3641;
+  color: #fff;
+  border-style: solid;
+  border-color: #1c2026;
+  border-radius: 15%;
+  border-width: 2px;
+  font-size: 0.6rem;
+  padding: 5px 20px;
+  margin-left: 5px;
+  font-family: "open sans", Verdana, Tahoma, "Trebuchet MS", Arial, Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#filters-menu {
+  display: none;
+}
+
+.product-filters {
+  position: absolute;
+  width: 200px;
+}
+
+.product-filters h3 {
+  font-size: 3rem;
+}
+
+/*Products list*/
+
+.product-list img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.product-text {
+  padding: 2px;
+}
+
+.product-text h2,
+.product-text h3,
+.product-text p {
+  color: #0a3641;
+  margin: 2px;
+}
+
+.product-text h2 {
+  font-size: 1.5rem;
+  font-family: "open sans", Verdana, Tahoma, "Trebuchet MS", Arial, Helvetica;
+}
+
+.product-text h3 {
+  font-size: 2rem;
+}
+
+.product-text p {
+  font-size: 1rem;
+}
+
+.product-text .price-tag {
+  color: #0a3641;
+}
+
+/*New update*/
+
+.singel-product-wrapper {
+  background-color: #f7f7f7;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1c2026;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-wrapper {
+  width: 290px;
+}
+
+.singel-product-wrapper {
+  padding: 10px;
+}

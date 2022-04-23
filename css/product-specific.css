@@ -1,0 +1,161 @@
+/*product specific page Golden age*/
+
+.main-golden-age {
+  display: flex;
+  flex-direction: column;
+}
+
+.golden-age__image {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.golden-age__image img {
+  width: 100%;
+}
+
+.golden-age__image-selections {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.product-specific-checkout__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.golden-age__information h2 {
+  margin: 5px 20px 30px 20px;
+  color: #34665b;
+}
+
+.golden-age__information h1 {
+  margin: 20px 20px 0px 20px;
+  font-size: 2rem;
+}
+
+.golden-age__information p {
+  margin: 0px 20px;
+}
+
+.size-selector,
+.color-selector {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.color-selector {
+  margin-top: 30px;
+}
+
+.size-selector {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.cta-add-cart {
+  margin: 20px;
+  padding: 10px 110px;
+}
+
+/*new update*/
+
+.product-wrapper-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 30px;
+  align-items: center;
+}
+
+.image-container-details {
+  width: 300px;
+}
+
+.image-details {
+  width: 100%;
+}
+
+.details-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.input-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "open sans";
+}
+
+.product-text {
+  width: 300px;
+  order: 2;
+}
+
+.more-details-wrapper {
+  max-width: 600px;
+  margin: 20px 50px;
+}
+
+.to-cart-cta,
+.view-cart-cta,
+.back-to-jackets-cta {
+  display: flex;
+  border-style: none;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  height: 50px;
+  max-width: 250px;
+  font-size: 1rem;
+  background-color: #34665b;
+  font-family: "open sans", Verdana, Tahoma, "Trebuchet MS", Arial, Helvetica;
+  color: white;
+}
+
+.view-cart-cta,
+.back-to-jackets-cta {
+  background-color: #1c2026;
+}
+.view-cart-cta:hover,
+.back-to-jackets-cta:hover {
+  background-color: #0a3641;
+}
+
+.to-cart-cta:hover {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #34665b;
+  color: #34665b;
+}
+
+.to-cart-cta:active {
+  background-color: #75d998;
+  color: #fff;
+}
+
+.view-cart-cta:active,
+.back-to-jackets-cta:active {
+  background-color: #f7f7f7;
+  color: #1c2026;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.size-select {
+  background-color: #fff;
+  font-family: "open sans", Verdana, Tahoma, "Trebuchet MS", Arial, Helvetica;
+}

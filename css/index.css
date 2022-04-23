@@ -1,0 +1,75 @@
+/* homepage main content */
+
+.main-home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-heading__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  margin-top: 0px;
+}
+
+.home-outlet__text,
+.home-new_arrivals__text,
+.home-heading__text {
+  color: #fff;
+  background-color: rgba(10, 54, 65, 80%);
+  width: 100%;
+}
+
+.home-outlet__text,
+.home-new_arrivals__text {
+  display: none;
+  flex-direction: column;
+  padding: 12px 0px;
+}
+
+.home-heading__text p,
+.home-heading__text h1 {
+  margin: 0px;
+}
+
+.home-heading__text p {
+  font-size: 1rem;
+}
+
+.home-heading__text h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.home-new_arrivals h2,
+.home-outlet h2 {
+  visibility: hidden;
+  position: absolute;
+}
+
+.home-heading {
+  background-image: url(/images/homepage-header.jpg);
+}
+
+.home-new_arrivals {
+  background-image: url(/images/new-arrivals.jpg);
+}
+
+.home-outlet {
+  background-image: url(/images/outlet-image.jpg);
+}
+
+.home-heading,
+.home-new_arrivals,
+.home-outlet {
+  position: relative;
+  margin: 5px 0px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,34 @@
+/*order success page*/
+
+.main-success {
+  max-width: 250px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.success-large {
+  width: 80px;
+  align-self: start;
+}
+
+.main-success p a,
+.product-specific-checkout__wrapper a {
+  color: #1c2026;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.cta-success:hover {
+  background-color: #0a3641;
+  color: #fff;
+}
+
+.cta-success {
+  width: 150px;
+  background-color: #fff;
+  color: #0a3641;
+  border-color: #0a3641;
+}
