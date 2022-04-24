@@ -159,3 +159,9 @@
   background-color: #fff;
   font-family: "open sans", Verdana, Tahoma, "Trebuchet MS", Arial, Helvetica;
 }
+
+.main-golden-age .loading-indicator {
+  font-weight: bold;
+  font-size: 21px;
+  margin: 50px auto;
+}

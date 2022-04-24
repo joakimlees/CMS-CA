@@ -11,33 +11,17 @@ const jacketId = params.get("id");
 const specificProductUrl = "https://joakimlees.no/rainydays-api/wp-json/wc/store/products/" + jacketId;
 
 async function getApiProduct(url) {
-  const response = await fetch(url);
-  const products = await response.json();
-  return products;
+  try {
+    const response = await fetch(url);
+    const products = await response.json();
+    return products;
+  } catch (error) {
+    detailsContainer.innerHTML = "Something went wrong - unable to load jacket";
+    console.log(error);
+  }
 }
 
 const jacket = await getApiProduct(specificProductUrl);
-
-console.log(jacket);
-
-console.log(jacket.name);
-console.log(jacket.prices.price);
-console.log(jacket.images[0].src);
-console.log(jacket.categories[0].name);
-//casual, hike, sport
-console.log(jacket.tags[0].name);
-//size
-console.log(jacket.attributes[0].terms[1].name);
-//descriton
-console.log(jacket.description);
-//color
-console.log(jacket.attributes[1].terms[0].name);
-
-for (let i = 0; i < jacket.tags.length; i++) {
-  if (!jacket.tags[i]) {
-    jacket.tags[i] = "";
-  }
-}
 
 /*
 const findId = products.filter((product) => {
